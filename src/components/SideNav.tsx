@@ -1,12 +1,9 @@
 import profileImage from "../assets/images/profileImage.svg";
 
 import React, { useEffect, useState } from "react";
-import Logo from "../assets/images/Bit.Shop.svg";
+import Logo from "../assets/images/ne-shop.png";
 import { CiSearch } from "react-icons/ci";
-import {
-  MdSpaceDashboard,
-  MdOutlineSpaceDashboard,
-} from "react-icons/md";
+import { MdSpaceDashboard, MdOutlineSpaceDashboard } from "react-icons/md";
 import {
   IoPersonOutline,
   IoPerson,
@@ -14,10 +11,7 @@ import {
 } from "react-icons/io5";
 
 import { RiSettings3Fill, RiSettings3Line } from "react-icons/ri";
-import {
-  IoIosNotifications,
-  IoIosNotificationsOutline,
-} from "react-icons/io";
+import { IoIosNotifications, IoIosNotificationsOutline } from "react-icons/io";
 import { IoIosArrowForward, IoIosArrowBack } from "react-icons/io";
 
 import DashboardButton from "./DashBoardButton";
@@ -68,9 +62,9 @@ const DashBoardSideBar: React.FC<InputProps> = () => {
   const notify = (message: string) => toast(message);
 
   const client = axiosClient();
-  const navigateToHome = () =>{
-    navigate('/')
-  }
+  const navigateToHome = () => {
+    navigate("/");
+  };
   const fetchProfile = async () => {
     try {
       const response = await client.get("/users/profile");
@@ -113,11 +107,11 @@ const DashBoardSideBar: React.FC<InputProps> = () => {
       <div className=" w-full flex items-center justify-between   gap-3">
         {showMenu && (
           <button onClick={navigateToHome}>
-          <img
-            src={Logo}
-            alt=""
-            className="w-16 tablet:w-24  tablet:flex p-2 "
-          />
+            <img
+              src={Logo}
+              alt=""
+              className="w-16 tablet:w-24  tablet:flex p-2 "
+            />
           </button>
         )}
         {showMenu ? (
@@ -276,7 +270,7 @@ const DashBoardSideBar: React.FC<InputProps> = () => {
           />
         </div>
         <div className="link w-full border border-gray rounded-sm mt-2 p-2 w-full border-none flex space-x-2">
-         <Logout /> 
+          <Logout />
         </div>
 
         <div className="flex gap-3 items-center justify-center my-5 border-t border-gray_100  align-bottom pt-2">

@@ -7,7 +7,7 @@ import "react-toastify/dist/ReactToastify.css";
 import useAxiosClient from "../hooks/AxiosInstance";
 import SectionHeader from "../components/SectionHeader";
 import Logout from "../components/Logout";
-import defaultProfileImage from "../assets/images/profileImage.svg"; 
+import defaultProfileImage from "../assets/images/profileImage.svg";
 
 interface Profile {
   username: string;
@@ -42,8 +42,7 @@ const Profile: React.FC = () => {
       try {
         const response = await axiosClient.get("/users/profile");
         setProfile(response.data);
-      } catch (error) {
-      }
+      } catch (error) {}
     };
     fetchProfile();
   }, [axiosClient]);
@@ -107,8 +106,8 @@ const Profile: React.FC = () => {
       <div className="h-50vh ml-10 text-slate-600 text-blue-500">
         Loading...
         <div className="">
-                <Logout />
-              </div>
+          <Logout />
+        </div>
       </div>
     );
 
@@ -138,7 +137,11 @@ const Profile: React.FC = () => {
               <div className="profile-image-container">
                 <div className="relative inline-block">
                   <img
-                    src={imagePreview || profile.profileImageUrl || defaultProfileImage}
+                    src={
+                      imagePreview ||
+                      profile.profileImageUrl ||
+                      defaultProfileImage
+                    }
                     alt="Profile"
                     className="w-32 h-32 rounded-full object-cover shadow-[0_0_5px_rgba(0,0,0,0.9)]"
                   />
